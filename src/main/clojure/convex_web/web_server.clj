@@ -127,7 +127,6 @@
        [:title "DXTRA - Ledger"]
 
        [:body
-        (page/include-js (str asset-prefix-url "/linkedin.js"))
 
         (ring.util.anti-forgery/anti-forgery-field)
 
