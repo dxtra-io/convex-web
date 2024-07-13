@@ -100,7 +100,7 @@
 
        [:meta
         {:name "description"
-         :content "Convex is an open, decentralised, and efficient technology platform built in the spirit of the original Internet."}]
+         :content "Ledger for the DXTRA platform."}]
 
        [:link
         {:rel "preconnect"
@@ -124,7 +124,7 @@
        (stylesheet (str asset-prefix-url "/css/react-resizable.css"))
        (stylesheet (str asset-prefix-url "/css/styles.css"))
 
-       [:title "Convex"]
+       [:title "DXTRA - Ledger"]
 
        [:body
         (page/include-js (str asset-prefix-url "/linkedin.js"))
