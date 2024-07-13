@@ -102,20 +102,6 @@
         {:name "description"
          :content "Convex is an open, decentralised, and efficient technology platform built in the spirit of the original Internet."}]
 
-       ;; -- Google Analytics
-
-       [:script {:async "true" :src "https://www.googletagmanager.com/gtag/js?id=UA-179518463-1"}]
-
-       [:script
-        "window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-
-         gtag('config', 'UA-179518463-1', { send_page_view: false });"]
-
-       ;; -- End Google Analytics
-
-
        ;; -- HubSpot
 
        [:script
