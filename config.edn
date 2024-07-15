@@ -53,7 +53,7 @@
            :test {:dir "db-test"
                   :reset? true}
            
-           :prod {:dir "/mnt/storage/convex/datalevin"]
+           :prod {:dir "/mnt/storage/convex/datalevin"
                   :reset? false}}
  
  
