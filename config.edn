@@ -53,7 +53,7 @@
            :test {:dir "db-test"
                   :reset? true}
            
-           :prod {:dir #join [#system/property "user.home" "/.convex/datalevin"]
+           :prod {:dir "/mnt/storage/convex/datalevin"]
                   :reset? false}}
  
  
@@ -77,10 +77,10 @@
                   :etch-store-temp-prefix "convex-world-test"}
            
            :prod {:hostname "convex.world"
-                  :key-store #join [#system/property "user.home" "/.convex/convex-world.pfx"]
+                  :key-store "/mnt/storage/convex/key-store.pfx"
                   :key-store-passphrase #ref [:secrets :key-store-passphrase]
                   :key-passphrase #ref [:secrets :key-passphrase]
-                  :etch-store #join [#system/property "user.home" "/.convex/etch/data.etch"]}}
+                  :etch-store "/mnt/storage/convex/etch/data.etch"}}
  
  
  ;; -- WEB SERVER
