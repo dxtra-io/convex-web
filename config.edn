@@ -76,7 +76,7 @@
                   :etch-store-temp? true
                   :etch-store-temp-prefix "convex-world-test"}
            
-           :prod {:hostname "convex.world"
+           :prod {:hostname "ledger.dxtra.io"
                   :key-store "/mnt/storage/convex/key-store.pfx"
                   :key-store-passphrase #ref [:secrets :key-store-passphrase]
                   :key-passphrase #ref [:secrets :key-passphrase]
