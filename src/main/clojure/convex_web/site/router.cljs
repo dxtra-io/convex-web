@@ -1,7 +1,7 @@
 (ns convex-web.site.router
   (:require [convex-web.site.runtime :refer [disp sub]]
             [convex-web.site.stack :as stack]
-            
+
             [reitit.frontend :as rf]
             [reitit.frontend.controllers :as rfc]
             [reitit.frontend.easy :as rfe]
@@ -77,11 +77,9 @@
   ["/"
    {:controllers
     [{:identity identity
-      :start (fn [{:keys [path]}]               
-               (when-not goog.DEBUG
-                 (js/gtag "event" "page_view" #js {:page_path path
-                                                   :send_to "UA-179518463-1"})))}]}
-   
+      :start (fn [{:keys [path]}]
+               )}]}
+
    ;; Welcome
    ;; ==============
    [""
@@ -100,8 +98,8 @@
      [{:identity identity
        :start (fn [_]
                 (stack/push :page.id/sign-up {:reset? true}))}]}]
-   
-   
+
+
    ;; Technology
    ;; ==============
    ["technology"
@@ -114,7 +112,7 @@
                                                                   (when-let [section (scroll-to match)]
                                                                     {:scroll-to section}))
                                                          :reset? true}))}]}]
-   
+
    ;; Use Cases
    ;; ==============
    ["use-cases"
@@ -127,7 +125,7 @@
                                                                   (when-let [section (scroll-to match)]
                                                                     {:scroll-to section}))
                                                          :reset? true}))}]}]
-   
+
    ;; Ecosystem
    ;; ==============
    ["ecosystem"
@@ -140,7 +138,7 @@
                                                                   (when-let [section (scroll-to match)]
                                                                     {:scroll-to section}))
                                                          :reset? true}))}]}]
-   
+
    ;; About
    ;; ==============
    ["about"
@@ -214,7 +212,7 @@
        :start (fn [_match]
                 (stack/push :page.id/videos {:reset? true}))}]}]
 
-   
+
    ;; Developer
    ;; ==============
    ["developer"
@@ -237,7 +235,7 @@
                                              {:reset? true
                                               :state  {:id :examples}
                                               :title  "Examples"}))}]}]
- 
+
 
     ["/fungible-token"
      {:name        :route-name/examples.fungible-token
@@ -272,7 +270,7 @@
                                               :state  {:id :examples.voting-system}
                                               :title  "Voting system"}))}]}]
     ]
-   
+
 
    ;; CVM
    ;; ==============
@@ -286,7 +284,7 @@
                                              {:reset? true
                                               :state  {:id :cvm}
                                               :title  "Convex Virtual Machine"}))}]}]
-   
+
     ["/accounts"
 
      [""
@@ -406,7 +404,7 @@
                                               {:reset? true
                                                :state  {:id :cvm.data-types.address}
                                                :title  "Address"}))}]}]
-     
+
      ["/blob"
       {:name        :route-name/cvm.data-types.blob
        :controllers [{:identity identity
@@ -415,7 +413,7 @@
                                               {:reset? true
                                                :state  {:id :cvm.data-types.blob}
                                                :title  "Blob"}))}]}]
-     
+
      ["/blob-map"
       {:name        :route-name/cvm.data-types.blob-map
        :controllers [{:identity identity
@@ -424,7 +422,7 @@
                                               {:reset? true
                                                :state  {:id :cvm.data-types.blob-map}
                                                :title  "Blob map"}))}]}]
-     
+
      ["/boolean"
       {:name        :route-name/cvm.data-types.boolean
        :controllers [{:identity identity
@@ -433,7 +431,7 @@
                                               {:reset? true
                                                :state  {:id :cvm.data-types.boolean}
                                                :title  "Boolean"}))}]}]
-     
+
      ["/keyword"
       {:name        :route-name/cvm.data-types.keyword
        :controllers [{:identity identity
@@ -442,7 +440,7 @@
                                               {:reset? true
                                                :state  {:id :cvm.data-types.keyword}
                                                :title  "Keyword"}))}]}]
-     
+
      ["/list"
       {:name        :route-name/cvm.data-types.list
        :controllers [{:identity identity
@@ -451,7 +449,7 @@
                                               {:reset? true
                                                :state  {:id :cvm.data-types.list}
                                                :title  "List"}))}]}]
-     
+
      ["/map"
       {:name        :route-name/cvm.data-types.map
        :controllers [{:identity identity
@@ -460,7 +458,7 @@
                                               {:reset? true
                                                :state  {:id :cvm.data-types.map}
                                                :title  "Map"}))}]}]
-     
+
      ["/nil"
       {:name        :route-name/cvm.data-types.nil
        :controllers [{:identity identity
@@ -469,7 +467,7 @@
                                               {:reset? true
                                                :state  {:id :cvm.data-types.nil}
                                                :title  "Nil"}))}]}]
-     
+
      ["/numbers"
       {:name        :route-name/cvm.data-types.numbers
        :controllers [{:identity identity
@@ -487,7 +485,7 @@
                                               {:reset? true
                                                :state  {:id :cvm.data-types.symbol}
                                                :title  "Symbol"}))}]}]
-     
+
      ["/set"
       {:name        :route-name/cvm.data-types.set
        :controllers [{:identity identity
@@ -496,7 +494,7 @@
                                               {:reset? true
                                                :state  {:id :cvm.data-types.set}
                                                :title  "Set"}))}]}]
-     
+
      ["/text"
       {:name        :route-name/cvm.data-types.text
        :controllers [{:identity identity
@@ -505,7 +503,7 @@
                                               {:reset? true
                                                :state  {:id :cvm.data-types.text}
                                                :title  "Text"}))}]}]
-     
+
      ["/vector"
       {:name        :route-name/cvm.data-types.vector
        :controllers [{:identity identity
@@ -541,7 +539,7 @@
                                              {:reset? true
                                               :state  {:id :cvm.peer-operations}
                                               :title  "Peer operations"}))}]}]
-  
+
     ["/reference"
      {:name        :route-name/cvm.reference
       :controllers [{:identity identity
@@ -555,7 +553,7 @@
                                                         [:parameters
                                                          :query
                                                          :symbol])]
-                                    (stack/push :page.id/cvm.reference 
+                                    (stack/push :page.id/cvm.reference
                                                 (merge {:reset? true}
                                                        (when symbol
                                                          {:state {:selected-library library
@@ -785,8 +783,8 @@
                                                :title  "Submit transaction"}))}]}]
      ]
     ]
-   
-   
+
+
    ;; Concepts
    ;; ==============
    ["concepts"
@@ -799,8 +797,8 @@
                                                         (when-let [section (scroll-to match)]
                                                           {:scroll-to section}))
                                                :reset? true}))}]}]
-   
-   
+
+
    ;; Vision
    ;; ==============
    ["vision"
@@ -813,7 +811,7 @@
                                                         (when-let [section (scroll-to match)]
                                                           {:scroll-to section}))
                                                :reset? true}))}]}]
-   
+
    ;; Glossary
    ;; ==============
    ["glossary"
@@ -826,7 +824,7 @@
                                                         (when-let [section (scroll-to match)]
                                                           {:scroll-to section}))
                                                :reset? true}))}]}]
-   
+
    ;; FAQ
    ;; ==============
    ["faq"
@@ -838,8 +836,8 @@
                                                         (when-let [section (scroll-to match)]
                                                           {:scroll-to section}))
                                                :reset? true}))}]}]
-   
-   
+
+
    ;; Create account
    ;; ==============
    ["create-account"
@@ -848,8 +846,8 @@
      [{:identity identity
        :start (fn [_]
                 (stack/push :page.id/create-account {:reset? true}))}]}]
-   
-   
+
+
    ;; Sandbox
    ;; ==============
    ["sandbox"
@@ -869,8 +867,8 @@
                                                :state  {:id :sandbox.tutorial}
                                                :title  "Sandbox tutorial"}))}]}]
     ]
-   
-   
+
+
    ;; My Account (account details)
    ;; ==============
    ["account-details"
@@ -879,19 +877,19 @@
      [{:identity identity
        :start (fn [_]
                 (stack/push :page.id/my-account {:reset? true}))}]}]
-   
-   
+
+
    ;; About
    ;; ==============
    ["about"
-    
+
     ["/team"
      {:name :route-name/team
       :controllers
       [{:start (fn [_]
                  (stack/push :page.id/team {:reset? true}))}]}]
-    
-    
+
+
     ["/white-paper"
      {:name :route-name/white-paper
       :controllers
@@ -901,7 +899,7 @@
                                                          (when-let [section (scroll-to match)]
                                                            {:scroll-to section}))
                                                 :reset? true}))}]}]
-    
+
     ["/get-involved"
      {:name :route-name/get-involved
       :controllers
@@ -912,7 +910,7 @@
                                                          (when-let [section (scroll-to match)]
                                                            {:scroll-to section}))
                                                 :reset? true}))}]}]
-    
+
     ["/roadmap"
      {:name :route-name/roadmap
       :controllers
@@ -922,7 +920,7 @@
                                                          (when-let [section (scroll-to match)]
                                                            {:scroll-to section}))
                                                 :reset? true}))}]}]
-    
+
     ["/convex-foundation"
      {:name :route-name/convex-foundation
       :controllers
